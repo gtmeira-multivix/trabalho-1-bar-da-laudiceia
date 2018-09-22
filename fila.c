@@ -40,17 +40,29 @@ Token fila_remover(Fila *f) {
 		return t;
 	}
 	
-	//Token info = f->
+	token t = f->dados(f->primeiro);
+	if(f->primeiro == f->tamanho-1) {
+	f->primeiro = 0;
+	} else {
+	f->primeiro++;
+	}
+	return token;
 }
 
 int fila_vazia(Fila *f) {
-	//Implemente
+	return f == NULL;
 }
 
 void fila_destruir(Fila *f) {
-	//Implemente
+	free(f->dados);
+	free(f);
 }
 
 void fila_imprimir(Fila *f) {
-	//Implemente
+	No *tmp = f->primeiro;
+	
+	while(tmp != NULL) {
+	token_imprimir(tmp->token);
+	tmp = tmp->prox;
+  }
 }
