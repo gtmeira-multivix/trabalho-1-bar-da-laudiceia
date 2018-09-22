@@ -12,15 +12,35 @@ struct fila {
 };
 
 Fila* fila_criar() {
-	//Implemente
+	Fila *f = (Fila*) malloc(sizeof(Fila));
+	f ->primeiro = NULL;
+	f ->ultimo = NULL;
+	return f;
 }
 
 void fila_adicionar(Fila *f, Token t) {
-	//Implemente
+	No *n = (No*) malloc(sizeof(No));
+	n ->token = t;
+	n ->prox = NULL;
+	
+	if(f ->ultimo == NULL) {
+		f ->primeiro = n;
+		f ->ultimo = n;
+		return;
+	}
+	
+	f ->ultimo->prox = n;
+	f ->ultimo = n;
 }
 
 Token fila_remover(Fila *f) {
-	//Implemente
+	Token t;
+	if (f ->primeiro == f->ultimo) {
+		printf("Fila vazia!\n");
+		return t;
+	}
+	
+	//Token info = f->
 }
 
 int fila_vazia(Fila *f) {
