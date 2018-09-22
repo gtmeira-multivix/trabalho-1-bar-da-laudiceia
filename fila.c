@@ -34,20 +34,16 @@ void fila_adicionar(Fila *f, Token t) {
 }
 
 Token fila_remover(Fila *f) {
-	
-	token t = f->dados(f->primeiro);
-	if(f->primeiro == f->tamanho-1) {
-	f->primeiro = 0;
-	} else {
-	f->primeiro++;
+	if(f->primeiro == f->NULL)  {
+	printf("Fila vazia!\n");
+	return 0;
 	}
-	return token;
 }
 
 int fila_vazia(Fila *f) {
-	if (f ->primeiro == f->ultimo) {
+	if (f ->primeiro == f->NULL) {
 		printf("Fila vazia!\n");
-		return t;
+		return 0;
 	}
 }
 
